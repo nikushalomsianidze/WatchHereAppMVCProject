@@ -1,0 +1,46 @@
+﻿@model RegisterViewModel
+<h1 class="text-warning">Register</h1>
+
+
+<form asp-controller="Account" asp-action="Register" method="post" role="form" class="form">
+    <h4>Create new account</h4>
+    <hr />
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group row">
+        <label asp-for="Email" class="col-md-2 mt-3"></label>
+        <div class="col-md-10">
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="Text-danger"></span>
+        </div>
+        <label asp-for="Name" class="col-md-2 mt-3"></label>
+        <div class="col-md-10 ">
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="Text-danger"></span>
+        </div>
+        <label asp-for="Password" class="col-md-2 mt-3"></label>
+        <div class="col-md-10 ">
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="Text-danger"></span>
+        </div>
+        <label asp-for="ConfirmedPassword" class="col-md-2 mt-3"></label>
+        <div class="col-md-10 ">
+            <input asp-for="ConfirmedPassword" class="form-control" />
+            <span asp-validation-for="ConfirmedPassword" class="Text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group mt-2">
+        <div class="col-md-2">
+            <button class="btn btn-outline-success btn-animate">Submit</button>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+}
+
+
