@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Runtime.CompilerServices;
 using WatchHereAppMVCProject.Models;
 using WatchHereAppMVCProject.Models;
 
@@ -31,12 +32,12 @@ namespace WatchHereAppMVCProject.Controllers
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
             var user = new User { UserName = model.Name, Email = model.Email, Name = model.Name };
-            var result = await _userManager.CreateAsync(user);//this class UserManager<IdentityUser> creating async instance of user
+            var result = await _userManager.CreateAsync(user,model.Password);//this class UserManager<IdentityUser> creating async instance of user
             if (result.Succeeded)
             { 
                     
                await _signInManager.SignInAsync(user, isPersistent: false);
-                return RedirectToAction("Index", "Home");
+                return View("~/Views/Home/Index.cshtml");
             }
             return View(model);
 
@@ -49,16 +50,30 @@ namespace WatchHereAppMVCProject.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
-            if (ModelState.IsValid)
+
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user == null)
             {
-                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password,model.RememberMe,lockoutOnFailure:false);
-                if (result.Succeeded) 
-                {
-                    return RedirectToAction("Index", "Home");
-                }
+             
+                return View(model);
             }
+            var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
+            if (result.Succeeded)
+            {
+                //  return View("~/Views/Home/Index.cshtml");
+                return RedirectToAction("Index", "Home");
+
+            }
+            ModelState.AddModelError(string.Empty, "Invalid login attempt.");
             return View(model);
-           
+
+        }
+        [HttpPost]
+        
+        public async Task<IActionResult> LogOut()
+        {
+            await _signInManager.SignOutAsync();
+            return View("~/Views/Home/Index.cshtml");
         }
     }
 }
