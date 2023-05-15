@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\WatchHereAppMVCProject",
+    "\\WatchHereAppMVCProject\\WatchHereAppMVCProject",
+    "\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\Views",
+    "\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\Views\\Account"
   ],
+  "SelectedNode": "\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\Views\\Account\\Register.cshtml",
   "PreviewInSolutionExplorer": false
 }
