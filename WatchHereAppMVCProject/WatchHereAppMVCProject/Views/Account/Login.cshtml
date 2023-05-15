@@ -1,0 +1,36 @@
+﻿@model LoginViewModel
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title text-center mb-4">Login</h3>
+                    <form asp-controller="Account" asp-action="Login" method="post" role="form">
+                        <div class="form-group" asp-validation-summary="All">
+                            <label asp-for="Email">Email address</label>
+                            <input asp-for="Email" class="form-control"/>
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group" asp-validation-summary="All">
+                            <label asp-for="Password">Password </label>
+                            <input asp-for="Password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group form-check d-flex justify-content-between align-items-center" asp-validation-summary="All">
+                            <div class="form-check">
+                                <input asp-for="RememberMe" class="form-check-input">
+                                <label asp-for="RememberMe" class="form-check-label">@Html.DisplayNameFor(m => m.RememberMe)</label>
+                            </div>
+                            <div>
+                                <a class="btn btn-link text-success" asp-action="Register">Create an account</a>
+                            </div>
+                        </div>
+                        
+
+                        <button type="submit" class="btn btn-outline-success btn-animate">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

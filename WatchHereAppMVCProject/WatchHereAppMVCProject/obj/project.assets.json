@@ -3641,11 +3641,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nikus\\Source\\Repos\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\WatchHereAppMVCProject.csproj",
+      "projectUniqueName": "C:\\Users\\nikus\\Source\\Repos\\nikushalomsianidze\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\WatchHereAppMVCProject.csproj",
       "projectName": "WatchHereAppMVCProject",
-      "projectPath": "C:\\Users\\nikus\\Source\\Repos\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\WatchHereAppMVCProject.csproj",
+      "projectPath": "C:\\Users\\nikus\\Source\\Repos\\nikushalomsianidze\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\WatchHereAppMVCProject.csproj",
       "packagesPath": "C:\\Users\\nikus\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nikus\\Source\\Repos\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\obj\\",
+      "outputPath": "C:\\Users\\nikus\\Source\\Repos\\nikushalomsianidze\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nikus\\AppData\\Roaming\\NuGet\\NuGet.Config",

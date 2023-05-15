@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gt30cF0X6D1KuJU3qzbotxA1NNmc5iZVohoxYKrTusOQZQdQxtv9TtQCB8uYEF/pWRck4smBQWLqvnL4YRhlHg==",
+  "dgSpecHash": "oDv393QlsnAVKKWWrWcUTomqsBnN5WzEh0OSsBjgv6pMDQyNkBTfy5F4Mf0AuxYy7IeboANH2Q4vaaW2f0NrVA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\nikus\\Source\\Repos\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\WatchHereAppMVCProject.csproj",
+  "projectFilePath": "C:\\Users\\nikus\\Source\\Repos\\nikushalomsianidze\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\WatchHereAppMVCProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nikus\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\nikus\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
