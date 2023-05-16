@@ -5,15 +5,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using identityStep.Data;
+using WatchHereAppMVCProject.Data;
 
 #nullable disable
 
-namespace identityStep.Migrations
+namespace WatchHereAppMVCProject.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230424153156_Initial")]
-    partial class Initial
+    [Migration("20230516153844_ReMigration")]
+    partial class ReMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -231,7 +231,43 @@ namespace identityStep.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("identityStep.Models.ApplicationUser", b =>
+            modelBuilder.Entity("WatchHereAppMVCProject.Models.Movie", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImgUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MovieCategory")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ReleaseDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Movies");
+                });
+
+            modelBuilder.Entity("WatchHereAppMVCProject.Models.User", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
@@ -239,7 +275,7 @@ namespace identityStep.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasDiscriminator().HasValue("ApplicationUser");
+                    b.HasDiscriminator().HasValue("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -291,6 +327,18 @@ namespace identityStep.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("WatchHereAppMVCProject.Models.Movie", b =>
+                {
+                    b.HasOne("WatchHereAppMVCProject.Models.User", null)
+                        .WithMany("LikedMovies")
+                        .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("WatchHereAppMVCProject.Models.User", b =>
+                {
+                    b.Navigation("LikedMovies");
                 });
 #pragma warning restore 612, 618
         }

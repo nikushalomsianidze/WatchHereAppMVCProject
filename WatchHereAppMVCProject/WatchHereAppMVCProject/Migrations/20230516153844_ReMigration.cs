@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace identityStep.Migrations
+namespace WatchHereAppMVCProject.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class ReMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -158,6 +158,29 @@ namespace identityStep.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Movies",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImgUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ReleaseDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    MovieCategory = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Movies", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Movies_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -196,6 +219,11 @@ namespace identityStep.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Movies_UserId",
+                table: "Movies",
+                column: "UserId");
         }
 
         /// <inheritdoc />
@@ -215,6 +243,9 @@ namespace identityStep.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Movies");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
