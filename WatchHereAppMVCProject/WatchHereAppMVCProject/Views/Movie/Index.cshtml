@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Movie>
+
+<div class="row">
+    @foreach (var movie in Model)
+    {
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="@movie.ImgUrl" class="card-img-top" alt="Movie Image">
+                <div class="card-body">
+                    <h5 class="card-title">@movie.Name</h5>
+                    <p class="card-text">@movie.Description</p>
+                    <p class="card-text">Release Date: @movie.ReleaseDate</p>
+                    <p class="card-text">Category: @movie.MovieCategory</p>
+                    <a href="@Url.Action("Details", "Movie", new { id = movie.Id })" class="btn btn-primary">Details</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

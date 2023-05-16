@@ -3,9 +3,10 @@
     "",
     "\\WatchHereAppMVCProject",
     "\\WatchHereAppMVCProject\\WatchHereAppMVCProject",
+    "\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\Data",
     "\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\Views",
     "\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\Views\\Account"
   ],
-  "SelectedNode": "\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\Views\\Account\\Register.cshtml",
+  "SelectedNode": "\\WatchHereAppMVCProject\\WatchHereAppMVCProject.sln",
   "PreviewInSolutionExplorer": false
 }

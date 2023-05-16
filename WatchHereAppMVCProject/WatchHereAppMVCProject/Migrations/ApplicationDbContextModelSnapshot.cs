@@ -8,7 +8,7 @@ using WatchHereAppMVCProject.Data;
 
 #nullable disable
 
-namespace WatchHereAppMVCProject.Migrations
+namespace identityStep.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -228,7 +228,7 @@ namespace WatchHereAppMVCProject.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("WatchHereAppMVCProject.Models.User", b =>
+            modelBuilder.Entity("identityStep.Models.ApplicationUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
@@ -236,7 +236,7 @@ namespace WatchHereAppMVCProject.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasDiscriminator().HasValue("User");
+                    b.HasDiscriminator().HasValue("ApplicationUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

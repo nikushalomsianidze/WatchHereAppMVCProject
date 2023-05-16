@@ -5,15 +5,15 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using WatchHereAppMVCProject.Data;
+using identityStep.Data;
 
 #nullable disable
 
-namespace WatchHereAppMVCProject.Migrations
+namespace identityStep.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230514164649_UserIdentityTable")]
-    partial class UserIdentityTable
+    [Migration("20230424153156_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -231,7 +231,7 @@ namespace WatchHereAppMVCProject.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("WatchHereAppMVCProject.Models.User", b =>
+            modelBuilder.Entity("identityStep.Models.ApplicationUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
@@ -239,7 +239,7 @@ namespace WatchHereAppMVCProject.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasDiscriminator().HasValue("User");
+                    b.HasDiscriminator().HasValue("ApplicationUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
