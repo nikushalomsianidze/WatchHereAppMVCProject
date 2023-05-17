@@ -1,11 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Mvc;
 using WatchHereAppMVCProject.Data;
 
 namespace WatchHereAppMVCProject.Controllers
 {
     public class MovieController : Controller
     {
+
         private readonly ApplicationDbContext _context;
+
 
         public MovieController(ApplicationDbContext context)
         {

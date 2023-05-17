@@ -12,8 +12,8 @@ using WatchHereAppMVCProject.Data;
 namespace WatchHereAppMVCProject.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230516153844_ReMigration")]
-    partial class ReMigration
+    [Migration("20230517090348_RemigrationOne")]
+    partial class RemigrationOne
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

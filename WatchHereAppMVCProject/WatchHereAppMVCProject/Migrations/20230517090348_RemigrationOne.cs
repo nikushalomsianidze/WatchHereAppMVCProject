@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace WatchHereAppMVCProject.Migrations
 {
     /// <inheritdoc />
-    public partial class ReMigration : Migration
+    public partial class RemigrationOne : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
