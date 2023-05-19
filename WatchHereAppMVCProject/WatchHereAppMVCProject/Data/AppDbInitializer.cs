@@ -45,6 +45,33 @@ namespace WatchHereAppMVCProject.Data
                             ReleaseDate = new DateTime(1971, 12, 19),
                             MovieCategory = MovieCategory.Drama,
                         },
+                        new Movie()
+                        {
+                            Name = "Akira",
+                            Description =
+                            "This is the Akira description",
+                            ImgUrl = "https://shorturl.at/ekHMR",
+                            ReleaseDate = new DateTime(1988, 12, 19),
+                            MovieCategory = MovieCategory.Anime,
+                        },
+                        new Movie()
+                        {
+                            Name = "A Man Named Scott",
+                            Description =
+                            "This is A Man Named Scott description",
+                            ImgUrl = "https://shorturl.at/emZ28",
+                            ReleaseDate = new DateTime(2021, 12, 19),
+                            MovieCategory = MovieCategory.Documentary,
+                        },
+                        new Movie()
+                        {
+                            Name = "The Fast and the Furious: Tokyo Drift",
+                            Description =
+                            "This is the The Fast and the Furious: Tokyo Drift description",
+                            ImgUrl = "https://shorturl.at/pAS34",
+                            ReleaseDate = new DateTime(2006, 12, 19),
+                            MovieCategory = MovieCategory.Action,
+                        },
                     });
                     context.SaveChanges();
                 }

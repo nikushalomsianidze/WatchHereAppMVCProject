@@ -3,10 +3,12 @@
     "",
     "\\WatchHereAppMVCProject",
     "\\WatchHereAppMVCProject\\WatchHereAppMVCProject",
+    "\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\Controllers",
     "\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\Data",
+    "\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\Models",
     "\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\Views",
     "\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\Views\\Account"
   ],
-  "SelectedNode": "\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\appsettings.json",
+  "SelectedNode": "\\WatchHereAppMVCProject\\WatchHereAppMVCProject\\Controllers\\AccountController.cs",
   "PreviewInSolutionExplorer": false
 }

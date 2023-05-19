@@ -261,7 +261,7 @@ namespace WatchHereAppMVCProject.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Movies");
+                    b.ToTable("Movies", (string)null);
                 });
 
             modelBuilder.Entity("WatchHereAppMVCProject.Models.User", b =>

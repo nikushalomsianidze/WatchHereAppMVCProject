@@ -1,0 +1,24 @@
+﻿@model User
+
+<h2>@Model.Name's Profile</h2>
+
+<h4>Bio</h4>
+<p>@Model.Bio</p>
+
+<h4>Email</h4>
+<p>@Model.Email</p>
+
+<h4>Liked Movies</h4>
+@if (Model.LikedMovies.Any())
+{
+    <ul>
+        @foreach (var movie in Model.LikedMovies)
+        {
+            @*<li>@movie.Name</li>*@
+        }
+    </ul>
+}
+else
+{
+    <p>No liked movies yet.</p>
+}

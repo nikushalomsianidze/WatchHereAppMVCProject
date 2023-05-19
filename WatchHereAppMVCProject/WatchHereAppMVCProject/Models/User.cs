@@ -7,6 +7,7 @@ namespace WatchHereAppMVCProject.Models
     {
         public string Name { get; set; }
 
+        public string Bio { get;set; }
         public ICollection<Movie> LikedMovies { get; set; }
     }
 }

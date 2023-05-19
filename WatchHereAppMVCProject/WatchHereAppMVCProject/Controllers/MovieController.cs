@@ -17,6 +17,7 @@ namespace WatchHereAppMVCProject.Controllers
 
         [HttpGet]
         public IActionResult Index()
+        
         {
             var movies = _context.Movies.ToList();
             return View(movies);
