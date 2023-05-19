@@ -37,7 +37,7 @@ namespace WatchHereAppMVCProject.Controllers
             { 
                     
                await _signInManager.SignInAsync(user, isPersistent: false);
-                return View("~/Views/Home/Index.cshtml");
+                return View("~/Views/Movie/Index.cshtml");
             }
             return View(model);
 
@@ -61,7 +61,7 @@ namespace WatchHereAppMVCProject.Controllers
             if (result.Succeeded)
             {
                 //  return View("~/Views/Home/Index.cshtml");
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Movie");
 
             }
             ModelState.AddModelError(string.Empty, "Invalid login attempt.");
@@ -73,7 +73,7 @@ namespace WatchHereAppMVCProject.Controllers
         public async Task<IActionResult> LogOut()
         {
             await _signInManager.SignOutAsync();
-            return View("~/Views/Home/Index.cshtml");
+            return View("~/Views/Movie/Index.cshtml");
         }
     }
 }
