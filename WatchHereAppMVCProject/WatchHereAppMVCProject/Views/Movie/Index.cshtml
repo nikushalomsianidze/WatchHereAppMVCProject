@@ -1,21 +1,39 @@
 ﻿@model IEnumerable<Movie>
 
-<div class="row">
-    @foreach (var movie in Model)
-    {
-        <div class="col-md-4">
-            <div class="card mb-3">
-                <div style="position: relative; padding-top: 100%;">
-                    <img src="@movie.ImgUrl" class="card-img-top" alt="Movie Image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">@movie.Name</h5>
-                    <p class="card-text">@movie.Description</p>
-                    <p class="card-text">Release Date: @movie.ReleaseDate.ToString("MM/dd/yyyy")</p>
-                    <p class="card-text">Category: @movie.MovieCategory</p>
-                    <a href="@Url.Action("Details", "Movie", new { id = movie.Id })" class="btn btn-primary">Details</a>
-                </div>
+@foreach (var movie in Model)
+{
+    <div class="col-md-4">
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5 class="card-title">@movie.Name</h5>
+                <p class="card-text">@movie.Description</p>
+                <p class="card-text">Release Date: @movie.ReleaseDate.ToString("yyyy-MM-dd")</p>
+                <img src="@movie.ImgUrl" class="card-img-top" alt="Movie Image">
+
+                <form method="post" action="@Url.Action("Like", "Movie", new { id = movie.Id })">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" value="@movie.Name" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea class="form-control" id="description" name="description" rows="3" readonly>@movie.Description</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="releaseDate">Release Date</label>
+                        <input type="text" class="form-control" id="releaseDate" name="releaseDate" value="@movie.ReleaseDate.ToString("yyyy-MM-dd")" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="imgUrl">Image URL</label>
+                        <input type="text" class="form-control" id="imgUrl" name="imgUrl" value="@movie.ImgUrl" readonly>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Like</button>
+                </form>
             </div>
         </div>
-    }
-</div>
+    </div>
+}

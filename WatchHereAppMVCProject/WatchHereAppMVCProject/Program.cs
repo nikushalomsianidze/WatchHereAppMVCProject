@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using WatchHereAppMVCProject.Data;
+using WatchHereAppMVCProject.Models;
 
 namespace WatchHereAppMVCProject
 {
@@ -9,10 +10,14 @@ namespace WatchHereAppMVCProject
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
                 );
-            builder.Services.AddIdentity<IdentityUser,IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
+            builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
+
+           
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
@@ -36,7 +41,8 @@ namespace WatchHereAppMVCProject
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                 pattern: "{controller=Movie}/{action=Index}/{id?}"
+                 );
 
 
             AppDbInitializer.Seed(app);

@@ -76,11 +76,7 @@ namespace WatchHereAppMVCProject.Controllers
             return View("~/Views/Movie/Index.cshtml");
         }
 
-        public IActionResult Profile()
-        {
-            var user = _userManager.GetUserAsync(User).Result;
-            return View(user);
-        }
+      
 
     }
 }
